@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import vcmsa.projects.budgettracker.model.User // Import the User model
 
+
 @Database(entities = [User::class], version = 1)
 abstract class UserDatabase : RoomDatabase() {
 

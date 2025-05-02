@@ -10,12 +10,12 @@
     <item
         android:id="@+id/nav_add_expense"
         android:icon="@drawable/ic_add"
-        android:title="Add Expense" />
+        android:title="Add" />
 
     <item
         android:id="@+id/nav_view_expenses"
         android:icon="@drawable/ic_expenses"
-        android:title="View Expenses" />
+        android:title="View" />
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_profile"

@@ -13,10 +13,17 @@ import vcmsa.projects.budgettracker.model.UserProfile
 import vcmsa.projects.budgettracker.util.Converters
 import vcmsa.projects.budgettracker.dao.UserProfileDao
 
-
+/*********
+Title: <The FULL Beginner Guide for Room in Android | Local Database Tutorial for Android>
+Author: <Philipp Lackner>
+Date: <2023>
+Code version <version from video published in Mar 15, 2023>
+Availability:<https://www.youtube.com/watch?v=bOd3wO0uFr8&t=1784s>
+ Explaination: Video helped provide a basic setup for the Room Database and entities
+ **********/
 @Database(
     entities = [User::class, Category::class, Expense::class, Budget::class,UserProfile::class],
-    version = 11
+    version = 12
 )
 @TypeConverters(Converters::class)
 abstract class BudgetDatabase : RoomDatabase() {

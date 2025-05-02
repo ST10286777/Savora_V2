@@ -38,7 +38,22 @@
                 android:id="@+id/etBudget"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter amount"
+                android:hint="Enter minimum amount"
+                android:inputType="numberDecimal"
+                android:textSize="16sp"
+                android:padding="12dp"
+
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:importantForAccessibility="yes"
+                android:contentDescription="Budget input field"
+                android:layout_marginBottom="16dp" />
+
+            <EditText
+                android:id="@+id/etMaxBudget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter max amount"
                 android:inputType="numberDecimal"
                 android:textSize="16sp"
                 android:padding="12dp"

@@ -79,6 +79,14 @@ class DashboardActivity : AppCompatActivity() {
         setupBudgetHealth()
 
     }
+
+    /*********
+    Title: <PieChart>
+    Author: </almic (Mick A.)>
+    Date: <2019>
+    Code version <3.1.0>
+    Availability:<https://github.com/PhilJay/MPAndroidChart/blob/master/MPChartLib/src/main/java/com/github/mikephil/charting/charts/PieChart.java>
+     **********/
     private fun setupPieChart() {
         lifecycleScope.launch(Dispatchers.Main) {
             val expenseDao = BudgetDatabase.getDatabase(applicationContext).expenseDao()
@@ -215,6 +223,14 @@ class DashboardActivity : AppCompatActivity() {
             else -> Color.GRAY // Default color if category not found
         }
     }
+
+    /*********
+    Title: <HorizontalBarChart>
+    Author: </danielgindi (Daniel Cohen Gindi)>
+    Date: <2019>
+    Code version <3.1.0>
+    Availability:<https://github.com/PhilJay/MPAndroidChart/blob/master/MPChartLib/src/main/java/com/github/mikephil/charting/charts/HorizontalBarChart.java>
+     **********/
 
     private fun setupHorizontalBarChart(totalSpent: Double, remainingBudget: Double, projectedOverspend: Double) {
         val barChart = findViewById<HorizontalBarChart>(R.id.horizontalBarChart)

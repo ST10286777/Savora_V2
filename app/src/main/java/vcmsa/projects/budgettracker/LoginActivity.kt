@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
                         sessionManager.saveUserId(user.id)
 
                         // Navigate to Dashboard with userId
-                        val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
+                        val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                         intent.putExtra("USER_ID", user.id)
                         startActivity(intent)
                         finish()

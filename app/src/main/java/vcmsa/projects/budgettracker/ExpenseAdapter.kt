@@ -15,6 +15,13 @@ import vcmsa.projects.budgettracker.model.ExpenseWithCategory
 import java.text.SimpleDateFormat
 import java.util.*
 
+/*********
+Title: <Android RecyclerView in Kotlin>
+Author: <GeeksForGeeks>
+Date: <2025>
+Code version <1>
+Availability:<https://www.geeksforgeeks.org/android-recyclerview-in-kotlin/>
+ **********/
 class ExpenseAdapter : ListAdapter<ExpenseWithCategory, ExpenseAdapter.ExpenseViewHolder>(ExpenseDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExpenseViewHolder {
@@ -40,11 +47,7 @@ class ExpenseAdapter : ListAdapter<ExpenseWithCategory, ExpenseAdapter.ExpenseVi
 
         val lat = item.expense.latitude
         val lon = item.expense.longitude
-        holder.locationTextView.text = if (lat != null && lon != null) {
-            "Location: $lat, $lon"
-        } else {
-            "Location: Not available"
-        }
+
 
         // Load receipt photo if available
         if (!item.expense.receiptPhoto.isNullOrEmpty()) {
@@ -66,7 +69,6 @@ class ExpenseAdapter : ListAdapter<ExpenseWithCategory, ExpenseAdapter.ExpenseVi
         val paymentTextView: TextView = itemView.findViewById(R.id.tvPaymentMethod)
         val tagsTextView: TextView = itemView.findViewById(R.id.tvTags)
         val notesTextView: TextView = itemView.findViewById(R.id.tvNotes)
-        val locationTextView: TextView = itemView.findViewById(R.id.tvLocation)
         val receiptImageView: ImageView = itemView.findViewById(R.id.ivReceiptPhoto)
     }
 

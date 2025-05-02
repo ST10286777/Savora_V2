@@ -125,11 +125,19 @@ class AddExpenseActivity : AppCompatActivity() {
         tvEndDate = findViewById(R.id.tvEndDate)
     }
 
+    /*********
+    Title: <Android RecyclerView in Kotlin>
+    Author: <GeeksForGeeks>
+    Date: <2025>
+    Code version <1>
+    Availability:<https://www.geeksforgeeks.org/android-recyclerview-in-kotlin/>
+     **********/
     private fun setupRecyclerView() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         expenseAdapter = ExpenseAdapter()
         recyclerView.adapter = expenseAdapter
     }
+
 
     private fun setupPaymentSpinner() {
         val methods = listOf("Cash", "Card", "Mobile Pay")
@@ -140,6 +148,13 @@ class AddExpenseActivity : AppCompatActivity() {
         ).also { it.setDropDownViewResource(R.layout.spinner_dropdown_item) }
     }
 
+    /*********
+    Title: <ROOM Database - #2 Read and Write Data | Android Studio Tutorial | Kotlin | 2022>
+    Author: <FoxAndroid>
+    Date: <2022>
+    Code version: <video published on  Jun 22, 2022>
+    Availability:<https://www.youtube.com/watch?v=-dm4cYlKiAA>
+     **********/
     private fun loadCategories() {
         lifecycleScope.launch(Dispatchers.IO) {
             val db = BudgetDatabase.getDatabase(applicationContext)
@@ -246,6 +261,13 @@ class AddExpenseActivity : AppCompatActivity() {
         }
     }
 
+    /*********
+    Title: <how to get image from gallery in android 10 and above>
+    Author: <Sanjay S Gangwar>
+    Date: <2021>
+    Code version: <version from article published on Feb 12, 2021>
+    Availability:<https://sanjaysgangwar.medium.com/how-to-get-image-from-gallery-in-android-10-and-above-e5f75a41a865>
+     **********/
     private fun pickReceiptFromGallery() {
         val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
             type = "image/*"
@@ -254,10 +276,13 @@ class AddExpenseActivity : AppCompatActivity() {
         startActivityForResult(Intent.createChooser(intent, "Select Receipt Image"), 2001)
     }
 
-
-
-
-
+    /*********
+    Title: <Using FileProvider properly in Android>
+    Author: <Aung Kyaw Myint>
+    Date: <2019>
+    Code version: <version from article published on May 16, 2019>
+    Availability:<https://medium.com/@aungkyawmyint_26195/using-implicit-camera-intent-with-fileprovider-8182f59ee972>
+     **********/
     private fun dispatchTakePictureIntent() {
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takeIntent ->
             takeIntent.resolveActivity(packageManager)?.also {
@@ -274,6 +299,13 @@ class AddExpenseActivity : AppCompatActivity() {
         }
     }
 
+    /*********
+    Title: <Android Photo App 05 save image file>
+    Author: <Programming w/ Professor Sluiter>
+    Date: <2019>
+    Code version: <version from video published on Feb 21, 2019>
+    Availability:<https://www.youtube.com/watch?v=ibL9c1IfeIQ>
+     **********/
     private fun createImageFile(): File? {
         val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())
         val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
