@@ -41,16 +41,20 @@
             android:exported="false" />
         <activity
             android:name=".BudgetHealthActivity"
-            android:exported="false" /> <!-- Login screen as entry point -->
+            android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Dashboard activity -->
+        </activity>
+        <!-- Login screen as entry point -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" /><!-- Dashboard activity -->
         <activity
             android:name=".DashboardActivity"
             android:exported="false" /> <!-- Other activities (register, home, etc.) -->

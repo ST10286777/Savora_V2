@@ -1,133 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:padding="16dp">
+    android:background="@color/background_black">
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:clipToPadding="false"
+        android:layout_marginBottom="56dp">
 
-        <!-- Amount -->
-        <EditText
-            android:id="@+id/etAmount"
-            android:hint="Amount"
-            android:inputType="numberDecimal"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
+            android:layout_height="wrap_content">
 
-        <!-- Category -->
-        <Spinner
-            android:id="@+id/spinnerCategory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp" />
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logo_savora"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
 
-        <!-- Description -->
-        <EditText
-            android:id="@+id/etDescription"
-            android:hint="Description (optional)"
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
+            <!-- Amount -->
+            <EditText
+                android:id="@+id/etAmount"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:hint="Amount"
+                android:inputType="numberDecimal"
+                android:backgroundTint="@color/primary_orange"
+                android:textColorHint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="24dp" />
 
-        <!-- Date picker -->
-        <Button
-            android:id="@+id/btnSelectDate"
-            android:text="Select Date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
+            <!-- Category -->
+            <Spinner
+                android:id="@+id/spinnerCategory"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/primary_orange"
+                android:textColor="@color/primary_orange"
+                android:textColorHint="@color/primary_orange"
+                android:popupBackground="@color/background_black"
+                app:layout_constraintTop_toBottomOf="@id/etAmount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
 
-        <TextView
-            android:id="@+id/tvDate"
-            android:text="@string/select_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="8dp" />
-        <Button
-            android:id="@+id/btnSelectStartDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select Start Date" />
+            <!-- Description -->
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:hint="Description (optional)"
+                android:inputType="text"
+                android:backgroundTint="@color/primary_orange"
+                android:textColorHint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/spinnerCategory"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
 
-        <TextView
-            android:id="@+id/tvStartDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <!-- Date picker -->
+            <Button
+                android:id="@+id/btnSelectDate"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:text="Select Date"
+                android:backgroundTint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/etDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvDate"
+                android:layout_marginTop="16dp" />
 
-        <Button
-            android:id="@+id/btnSelectEndDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select End Date" />
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:text="@string/select_date"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/etDescription"
+                app:layout_constraintStart_toEndOf="@id/btnSelectDate"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp" />
 
-        <TextView
-            android:id="@+id/tvEndDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <!-- Start Date -->
+            <Button
+                android:id="@+id/btnSelectStartDate"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:text="Select Start Date"
+                android:backgroundTint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/btnSelectDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvStartDate"
+                android:layout_marginTop="16dp" />
 
-        <!-- Tags -->
-        <EditText
-            android:id="@+id/etTags"
-            android:hint="Enter tags (comma-separated)"
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp" />
+            <TextView
+                android:id="@+id/tvStartDate"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/btnSelectDate"
+                app:layout_constraintStart_toEndOf="@id/btnSelectStartDate"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp" />
 
-        <!-- Notes -->
-        <EditText
-            android:id="@+id/etNotes"
-            android:hint="Optional notes"
-            android:inputType="textMultiLine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp" />
+            <!-- End Date -->
+            <Button
+                android:id="@+id/btnSelectEndDate"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:text="Select End Date"
+                android:backgroundTint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/btnSelectStartDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvEndDate"
+                android:layout_marginTop="16dp" />
 
-        <!-- Payment Method -->
-        <Spinner
-            android:id="@+id/spinnerPayment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp" />
+            <TextView
+                android:id="@+id/tvEndDate"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/btnSelectStartDate"
+                app:layout_constraintStart_toEndOf="@id/btnSelectEndDate"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp" />
 
-        <!-- Attach/ Capture Receipt -->
-        <Button
-            android:id="@+id/btnAttachReceipt"
-            android:text="Attach Receipt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp" />
+            <!-- Tags -->
+            <EditText
+                android:id="@+id/etTags"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:hint="Enter tags (comma-separated)"
+                android:inputType="text"
+                android:backgroundTint="@color/primary_orange"
+                android:textColorHint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/btnSelectEndDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
 
-        <Button
-            android:id="@+id/btnCapturePhoto"
-            android:text="Capture Photo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            <!-- Notes -->
+            <EditText
+                android:id="@+id/etNotes"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="@color/primary_orange"
+                android:gravity="top"
+                android:hint="Optional notes"
+                android:inputType="textMultiLine"
+                android:textColor="@color/white"
+                android:textColorHint="@color/primary_orange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etTags" />
 
-        <!-- Save -->
-        <Button
-            android:id="@+id/btnSaveExpense"
-            android:text="Save Expense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
+            <Spinner
+                android:id="@+id/spinnerPayment"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/primary_orange"
+                android:textColor="@color/primary_orange"
+                android:textColorHint="@color/primary_orange"
+                android:popupBackground="@color/background_black"
+                app:layout_constraintTop_toBottomOf="@id/etNotes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
 
-        <!-- RecyclerView -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvExpenses"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:visibility="gone" />
+            <!-- Receipt Buttons -->
+            <Button
+                android:id="@+id/btnAttachReceipt"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:text="Attach Receipt"
+                android:backgroundTint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/spinnerPayment"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnCapturePhoto"
+                android:layout_marginTop="16dp" />
 
-    </LinearLayout>
-</ScrollView>
+            <Button
+                android:id="@+id/btnCapturePhoto"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:text="Capture Photo"
+                android:backgroundTint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/spinnerPayment"
+                app:layout_constraintStart_toEndOf="@id/btnAttachReceipt"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp" />
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/btnSaveExpense"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:text="Save Expense"
+                android:backgroundTint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/btnAttachReceipt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="32dp" />
+
+            <!-- Hidden RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvExpenses"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btnSaveExpense"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:visibility="gone" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation View -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:background="@color/primary_orange"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        app:menu="@menu/bottom_navigation_menu" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

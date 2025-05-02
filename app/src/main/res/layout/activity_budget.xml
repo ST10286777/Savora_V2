@@ -1,102 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:background="@color/background_black">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:clipToPadding="false"
+        android:layout_marginBottom="56dp">
 
-        <!-- Add Budget Category Section -->
-        <TextView
-            android:text="Add Budget Category"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:id="@+id/etCategoryName"
-            android:hint="Category Name"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/etMonthlyBudget"
-            android:hint="Monthly Budget Amount (R)"
-            android:inputType="numberDecimal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp" />
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logo_savora"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
 
-        <CheckBox
-            android:id="@+id/cbRollover"
-            android:text="Rollover"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:minWidth="48dp"
-            android:padding="8dp" />
+            <!-- Add Budget Category Section -->
+            <TextView
+                android:id="@+id/tvCategoryTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Add Budget Category"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="24dp" />
 
-        <Button
-            android:id="@+id/btnAddCategory"
-            android:text="Add Category"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:layout_marginTop="8dp" />
+            <!-- Category Name -->
+            <EditText
+                android:id="@+id/etCategoryName"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:hint="Category Name"
+                android:backgroundTint="@color/primary_orange"
+                android:textColorHint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/tvCategoryTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
 
-        <!-- Add Special Event Budget Section -->
-        <TextView
-            android:text="Add Special Event Budget"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginTop="24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <!-- Monthly Budget -->
+            <EditText
+                android:id="@+id/etMonthlyBudget"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:hint="Monthly Budget Amount (R)"
+                android:inputType="numberDecimal"
+                android:backgroundTint="@color/primary_orange"
+                android:textColorHint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/etCategoryName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
 
-        <EditText
-            android:id="@+id/etSpecialEventName"
-            android:hint="Special Event Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp" />
+            <!-- Rollover Checkbox -->
+            <CheckBox
+                android:id="@+id/cbRollover"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Rollover"
+                android:textColor="@color/white"
+                android:buttonTint="@color/primary_orange"
+                app:layout_constraintTop_toBottomOf="@id/etMonthlyBudget"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp" />
 
-        <EditText
-            android:id="@+id/etSpecialEventBudget"
-            android:hint="Event Budget Amount (R)"
-            android:inputType="numberDecimal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp" />
+            <!-- Add Category Button -->
+            <Button
+                android:id="@+id/btnAddCategory"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:text="Add Category"
+                android:backgroundTint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/cbRollover"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
 
-        <Button
-            android:id="@+id/btnAddEvent"
-            android:text="Add Special Event"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:layout_marginTop="8dp" />
+            <!-- Add Special Event Budget Section -->
+            <TextView
+                android:id="@+id/tvEventTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Add Special Event Budget"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/btnAddCategory"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="32dp" />
 
-        <!-- List of Categories -->
-        <TextView
-            android:text="Your Categories"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginTop="24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <!-- Event Name -->
+            <EditText
+                android:id="@+id/etSpecialEventName"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:hint="Special Event Name"
+                android:backgroundTint="@color/primary_orange"
+                android:textColorHint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/tvEventTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvCategories"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="16dp"/>
+            <!-- Event Budget -->
+            <EditText
+                android:id="@+id/etSpecialEventBudget"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:hint="Event Budget Amount (R)"
+                android:inputType="numberDecimal"
+                android:backgroundTint="@color/primary_orange"
+                android:textColorHint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/etSpecialEventName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
 
-    </LinearLayout>
-</ScrollView>
+            <!-- Add Event Button -->
+            <Button
+                android:id="@+id/btnAddEvent"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:text="Add Special Event"
+                android:backgroundTint="@color/primary_orange"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/etSpecialEventBudget"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
+
+            <!-- List of Categories Section -->
+            <TextView
+                android:id="@+id/tvCategoriesTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Your Categories"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/btnAddEvent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="32dp" />
+
+            <!-- Categories RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCategories"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tvCategoriesTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation View -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:background="@color/primary_orange"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        app:menu="@menu/bottom_navigation_menu" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

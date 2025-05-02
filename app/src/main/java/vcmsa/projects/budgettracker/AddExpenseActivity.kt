@@ -135,9 +135,9 @@ class AddExpenseActivity : AppCompatActivity() {
         val methods = listOf("Cash", "Card", "Mobile Pay")
         spinnerPayment.adapter = ArrayAdapter(
             this,
-            android.R.layout.simple_spinner_item,
+            R.layout.spinner_item,
             methods
-        ).also { it.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) }
+        ).also { it.setDropDownViewResource(R.layout.spinner_dropdown_item) }
     }
 
     private fun loadCategories() {
@@ -151,10 +151,10 @@ class AddExpenseActivity : AppCompatActivity() {
             withContext(Dispatchers.Main) {
                 spinnerCategory.adapter = ArrayAdapter(
                     this@AddExpenseActivity,
-                    android.R.layout.simple_spinner_item,
+                    R.layout.spinner_item,
                     names
                 ).also {
-                    it.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                    it.setDropDownViewResource(R.layout.spinner_dropdown_item)
                 }
             }
         }

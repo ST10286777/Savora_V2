@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="@color/background_black"
     android:fitsSystemWindows="true"
     tools:context=".DashboardActivity">
 
@@ -23,19 +23,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:paddingBottom="100dp"> <!-- extra space for nav bar -->
+            android:padding="24dp"
+            android:paddingBottom="100dp">
 
-            <!-- Title -->
-            <TextView
-                android:id="@+id/tvDashboardTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Savora Dashboard"
-                android:textColor="#FFA500"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_margin="16dp" />
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logo_savora"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp" />
 
             <!-- Budget Health Section -->
             <LinearLayout
@@ -43,59 +41,61 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:paddingTop="16dp">
+
                 <TextView
                     android:id="@+id/tvBudgetAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Remaining Budget"
                     android:textSize="18sp"
-                    android:textColor="@android:color/white"
-                    android:layout_marginTop="16dp"
-                    android:layout_gravity="center_horizontal" />
+                    android:textColor="@color/white"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="8dp" />
 
                 <TextView
                     android:id="@+id/tvSpent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Spent: R0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    android:layout_marginBottom="8dp" />
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp" />
 
                 <TextView
                     android:id="@+id/tvRemaining"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Remaining: R0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    android:layout_marginBottom="8dp" />
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp" />
 
                 <TextView
                     android:id="@+id/tvProjected"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Projected Overspending: R0"
-                    android:textColor="#FFA500"
-                    android:textSize="18sp"
+                    android:textColor="@color/primary_orange"
+                    android:textSize="16sp"
                     android:layout_marginBottom="8dp" />
 
                 <ProgressBar
                     android:id="@+id/budgetHealthProgressBar"
-                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:max="100"
                     android:progress="50"
-                    android:progressTint="#FFA500" />
+                    android:progressTint="@color/primary_orange"
+                    android:backgroundTint="@color/dark_gray" />
 
                 <TextView
                     android:id="@+id/statusTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Budget Status: Healthy"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     android:layout_marginTop="8dp" />
             </LinearLayout>
@@ -142,7 +142,7 @@
                 android:max="100"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
-                android:progressTint="#FFA500"
+                android:progressTint="@color/primary_orange"
                 android:backgroundTint="#444444" />
 
             <TextView
@@ -150,7 +150,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Level Status"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"/>
 
@@ -161,9 +161,8 @@
                 android:layout_height="wrap_content"
                 android:text="View Budget Health"
                 android:layout_marginTop="16dp"
-                android:backgroundTint="@color/purple_500"
-                android:textColor="@android:color/white"/>
-
+                android:backgroundTint="@color/primary_orange"
+                android:textColor="@color/white"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
@@ -173,7 +172,9 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         app:menu="@menu/bottom_navigation_menu"
-        android:background="?android:attr/windowBackground"
+        android:background="@color/primary_orange"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
